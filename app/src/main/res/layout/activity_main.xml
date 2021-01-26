@@ -196,6 +196,36 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/barrier3" />
 
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="@dimen/top_margin"
+            app:constraint_referenced_ids="tvFatherFatherFather,tvFatherFatherMother,tvFatherMotherFather,tvFatherMotherMother,tvMotherFatherFather,tvMotherFatherMother,tvMotherMotherFather,tvMotherMotherMother" />
+
+        <TextView
+            android:id="@+id/tvFatherFatherFatherFather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvFatherFatherFatherFather"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guideline0625"
+            app:layout_constraintTop_toBottomOf="@id/barrier4" />
+
+        <TextView
+            android:id="@+id/tvFatherFatherFatherMother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvFatherFatherFatherMother"
+            app:layout_constraintLeft_toRightOf="@id/guideline0625"
+            app:layout_constraintRight_toLeftOf="@id/guideline125"
+            app:layout_constraintTop_toBottomOf="@id/barrier4" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"
             android:layout_width="wrap_content"
@@ -244,6 +274,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.875" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline0625"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0625" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </HorizontalScrollView>
