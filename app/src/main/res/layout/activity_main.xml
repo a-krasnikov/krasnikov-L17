@@ -1,18 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvRoot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginTop="@dimen/top_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvRoot"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="@dimen/top_margin"
+            app:constraint_referenced_ids="tvRoot" />
+
+        <TextView
+            android:id="@+id/tvFather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvFather"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guideline5"
+            app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+        <TextView
+            android:id="@+id/tvMother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvMother"
+            app:layout_constraintLeft_toRightOf="@id/guideline5"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="@dimen/top_margin"
+            app:constraint_referenced_ids="tvFather,tvMother" />
+
+        <TextView
+            android:id="@+id/tvFatherFather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvFatherFather"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guideline25"
+            app:layout_constraintTop_toBottomOf="@id/barrier2" />
+
+        <TextView
+            android:id="@+id/tvMotherFather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvMotherFather"
+            app:layout_constraintLeft_toRightOf="@id/guideline25"
+            app:layout_constraintRight_toLeftOf="@id/guideline5"
+            app:layout_constraintTop_toBottomOf="@id/barrier2" />
+
+        <TextView
+            android:id="@+id/tvFatherMother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvFatherMother"
+            app:layout_constraintLeft_toRightOf="@id/guideline5"
+            app:layout_constraintRight_toLeftOf="@id/guideline75"
+            app:layout_constraintTop_toBottomOf="@id/barrier2" />
+
+        <TextView
+            android:id="@+id/tvMotherMother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvMotherMother"
+            app:layout_constraintLeft_toRightOf="@id/guideline75"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier2" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:barrierMargin="@dimen/top_margin"
+            app:constraint_referenced_ids="tvFatherFather,tvMotherFather,tvFatherMother,tvMotherMother" />
+
+        <TextView
+            android:id="@+id/tvFatherFatherFather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvFatherFatherFather"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guideline125"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <TextView
+            android:id="@+id/tvFatherFatherMother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvFatherFatherMother"
+            app:layout_constraintLeft_toRightOf="@id/guideline125"
+            app:layout_constraintRight_toLeftOf="@id/guideline25"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <TextView
+            android:id="@+id/tvFatherMotherFather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvFatherMotherFather"
+            app:layout_constraintLeft_toRightOf="@id/guideline25"
+            app:layout_constraintRight_toLeftOf="@id/guideline375"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <TextView
+            android:id="@+id/tvFatherMotherMother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvFatherMotherMother"
+            app:layout_constraintLeft_toRightOf="@id/guideline375"
+            app:layout_constraintRight_toLeftOf="@id/guideline5"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <TextView
+            android:id="@+id/tvMotherFatherFather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tvMotherFatherFather"
+            app:layout_constraintLeft_toRightOf="@id/guideline5"
+            app:layout_constraintRight_toLeftOf="@id/guideline625"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <TextView
+            android:id="@+id/tvMotherFatherMother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvMotherFatherMother"
+            app:layout_constraintLeft_toRightOf="@id/guideline625"
+            app:layout_constraintRight_toLeftOf="@id/guideline75"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <TextView
+            android:id="@+id/tvMotherMotherFather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tvMotherMotherFather"
+            app:layout_constraintLeft_toRightOf="@id/guideline75"
+            app:layout_constraintRight_toLeftOf="@id/guideline875"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <TextView
+            android:id="@+id/tvMotherMotherMother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="@dimen/right_margin"
+            android:text="tvMotherMotherMother"
+            app:layout_constraintLeft_toRightOf="@id/guideline875"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline125"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.125" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline375"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.375" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline625"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.625" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline875"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.875" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</HorizontalScrollView>
